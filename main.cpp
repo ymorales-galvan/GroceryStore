@@ -23,20 +23,35 @@ int main()
 
                 {
                         cout<<"What is the item?\n";
-                        cin>>nameItem;
-                        cin.ignore();
-                if (numItems >=5)
-                {
-                        cout<<"You'll need a bigger list!\n";
+                        cin>> nameItem;
+                        cin.ignore(); 
+                        list [numItems] = nameItem; 
+
+                        if (numItems >=5)
+
+                        {
+                                cout<<"You'll need a bigger list!\n";
+                        }
+                        //    for (int numItems=1; numItems < 5; numItems++)
+                        //   {
+                        //         cout<< nameItem[1];
+                        // }
+
+                        numItems++; //number of items incremented
                 }
 
-                numItems++;
-                }
-                
-//                string list[5] = { nameItem } ;
+                //                string list[5] = { nameItem } ;
         }
 
         while (input != 'q' && input != 'Q' );
+
+        cout<< "==ITEMS TO BUY==\n";
+        for (numItems=0; numItems < 5 ; numItems++)
+        {
+                cout<<  numItems + 1<< ' ';
+                cout<< list [numItems] <<endl;
+        }  
+        // for ( numItems=1; numItems < list[5]; numItems++ )
 
         return 0;
 }
