@@ -1,11 +1,14 @@
 //Author: Yuliana Morales
 #include<iostream>
 #include<string>
+#include<vector>
+
 using namespace std;
 
 int main()
 {
-        string list[5]; //array of 5 strings
+        // string list[5]; //array of 5 strings
+        vector <string>list;
         string nameItem;
         int numItems = 0;
         char input = ' ';
@@ -25,33 +28,47 @@ int main()
                         cout<<"What is the item?\n";
                         cin>> nameItem;
                         cin.ignore(); 
-                        list [numItems] = nameItem; 
 
-                        if (numItems >=5)
 
-                        {
-                                cout<<"You'll need a bigger list!\n";
-                        }
-                        //    for (int numItems=1; numItems < 5; numItems++)
-                        //   {
-                        //         cout<< nameItem[1];
+                        // if (numItems > 0)
+
+                        list.push_back(nameItem);
+
+                        // cout<<"You'll need a bigger list!\n";
+
+                        // else
+                        // {
+                        //    for (int numItems=0; numItems >= 0 ; numItems++)
+                        // {
+                        //        cout<< "No items to buy\n";
+                        //  } 
+
+                        //  list.push_back(numItems);
+                        // list [numItems] = nameItem; 
+                        numItems++;
                         // }
-
-                        numItems++; //number of items incremented
                 }
 
                 //                string list[5] = { nameItem } ;
         }
 
         while (input != 'q' && input != 'Q' );
-
-        cout<< "==ITEMS TO BUY==\n";
-        for (numItems=0; numItems < 5 ; numItems++)
+        if (numItems> 0)
         {
-                cout<<  numItems + 1<< ' ';
-                cout<< list [numItems] <<endl;
-        }  
-        // for ( numItems=1; numItems < list[5]; numItems++ )
+                cout<< "==ITEMS TO BUY==\n";
+
+                for (numItems= 0; numItems < list.size(); numItems++)
+                {
+                        cout<<  numItems + 1<< ' ';
+                        cout<< list [numItems] <<endl;
+                }
+        }
+        if( numItems == 0)
+        {
+                cout<< "No items to buy!\n";
+        }
+        //for ( numItems=1; numItems < list[5]; numItems++ )
 
         return 0;
 }
+
