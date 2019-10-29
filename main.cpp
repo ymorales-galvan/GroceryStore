@@ -12,12 +12,17 @@ int main()
         string nameItem;
         int numItems = 0;
         char input = ' ';
+                       
 
         do
         {
                 cout<<"\n==GROCERY LIST MANAGER==";
                 cout<<"\nEnter your choice: ";
                 cout<<"\n (A)dd an item";
+                if (!list.empty())
+                {
+                        cout<<"\n (D)elete last item";
+                }
                 cout<<"\n (Q)uit";
                 cout<<"\nYour choice (A/Q): ";
                 cin>>input;
@@ -36,20 +41,20 @@ int main()
 
                         // cout<<"You'll need a bigger list!\n";
 
-                        // else
-                        // {
-                        //    for (int numItems=0; numItems >= 0 ; numItems++)
-                        // {
                         //        cout<< "No items to buy\n";
                         //  } 
 
                         //  list.push_back(numItems);
                         // list [numItems] = nameItem; 
                         numItems++;
-                        // }
+               
                 }
-
-                //                string list[5] = { nameItem } ;
+              if (input == 'd' || input == 'D')
+              {
+                      string variable = list[numItems];
+                      cout<< list.size()-1; 
+                      list.pop_back();
+              }
         }
 
         while (input != 'q' && input != 'Q' );
@@ -62,12 +67,19 @@ int main()
                         cout<<  numItems + 1<< ' ';
                         cout<< list [numItems] <<endl;
                 }
-        }
+
+
+        } 
+       /* if (input == 'd' && input == 'D')
+        {
+                cout<<list.pop_back();
+        }*/
+        
         if( numItems == 0)
         {
                 cout<< "No items to buy!\n";
         }
-        //for ( numItems=1; numItems < list[5]; numItems++ )
+        
 
         return 0;
 }
