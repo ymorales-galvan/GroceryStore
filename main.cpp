@@ -52,12 +52,13 @@ int main()
               if (input == 'd' || input == 'D')
               {
                       string variable = list[numItems];
-                     
-                      if (!list.empty())
-                      {
-                       variable= list.size()-1; 
+                     if(!list.empty())
+                     {
+                      variable= list.size()-1; 
                       list.pop_back();
-                      }
+                     }
+                      cout<< numItems<< " was deleted from the list.\n";
+                      
               }
         }
 
