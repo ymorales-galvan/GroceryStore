@@ -52,7 +52,7 @@ int main()
               if (input == 'd' || input == 'D')
               {
                       string variable = list[numItems];
-                      cout<< list.size()-1; 
+                      variable= list.size()-1; 
                       list.pop_back();
               }
         }
