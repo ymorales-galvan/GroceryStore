@@ -12,7 +12,7 @@ int main()
         string nameItem;
         int numItems = 0;
         char input = ' ';
-                       
+
 
         do
         {
@@ -47,45 +47,47 @@ int main()
                         //  list.push_back(numItems);
                         // list [numItems] = nameItem; 
                         numItems++;
-               
-                }
-              if (input == 'd' || input == 'D')
-              {
-                      string variable = list[numItems];
-                     if(!list.empty())
-                     {
-                      variable= list.size()-1; 
-                      list.pop_back();
-                     }
-                      cout<< numItems<< " was deleted from the list.\n";
-                      
-              }
+
         }
-
-        while (input != 'q' && input != 'Q' );
-        if (numItems> 0)
+        if(!list.empty())
         {
-                cout<< "==ITEMS TO BUY==\n";
+             if (input == 'd' || input == 'D')
 
-                for (numItems= 0; numItems < list.size(); numItems++)
                 {
-                        cout<<  numItems + 1<< ' ';
-                        cout<< list [numItems] <<endl;
+                        nameItem = list.at(list.size()-1);
+                        cout<< nameItem<< " was deleted from the list.\n";
+                        list.pop_back();
+
                 }
-
-
-        } 
-       /* if (input == 'd' && input == 'D')
-        {
-                cout<<list.pop_back();
-        }*/
-        
-        if( numItems == 0)
-        {
-                cout<< "No items to buy!\n";
         }
-        
 
-        return 0;
+
+}
+
+while (input != 'q' && input != 'Q' );
+if (numItems> 0)
+{
+        cout<< "==ITEMS TO BUY==\n";
+
+        for (numItems= 0; numItems < list.size(); numItems++)
+        {
+                cout<<  numItems + 1<< ' ';
+                cout<< list [numItems] <<endl;
+        }
+
+
+} 
+/* if (input == 'd' && input == 'D')
+   {
+   cout<<list.pop_back();
+   }*/
+
+if( numItems == 0)
+{
+        cout<< "No items to buy!\n";
+}
+
+
+return 0;
 }
 
